@@ -1,4 +1,4 @@
-# Kubernetes Backend
+# Nodejs Seed
 
 This is a full setup for Nodejs + Koa + Typescript + jest + Nodemon development
 
