@@ -1,7 +1,7 @@
 {
   "name": "nodejs-seed",
   "version": "1.0.0",
-  "description": "Nodejs + Koa2 + Jest + Typescript",
+  "description": "Nodejs + Hapi + Jest + Typescript + Graphql",
   "main": "src/Server.ts",
   "repository": {
     "type": "git",
@@ -9,9 +9,10 @@
   },
   "keywords": [
     "nodejs",
-    "Koa2",
+    "Hapi",
     "Jest",
-    "Typescript"
+    "Typescript",
+    "Graphql"
   ],
   "author": "Yulong Song <felixsong88@gmail.com>",
   "license": "ISC",
@@ -24,14 +25,9 @@
   },
   "devDependencies": {
     "@types/async": "2.0.50",
+    "@types/hapi": "17.8.2",
     "@types/jest": "23.3.1",
-    "@types/joi": "13.4.2",
     "@types/koa": "2.0.46",
-    "@types/koa-bodyparser": "5.0.1",
-    "@types/koa-compose": "3.2.2",
-    "@types/koa-pino-logger": "2.1.1",
-    "@types/koa-router": "7.0.31",
-    "@types/koa2-cors": "2.0.1",
     "@types/supertest": "2.0.5",
     "axios-mock-adapter": "1.15.0",
     "cross-env": "5.2.0",
@@ -48,16 +44,11 @@
     "typescript": "3.0.1"
   },
   "dependencies": {
+    "apollo-server-hapi": "2.3.1",
     "async": "2.6.1",
     "axios": "0.18.0",
-    "joi": "13.6.0",
-    "koa": "2.5.2",
-    "koa-bodyparser": "4.2.1",
-    "koa-compose": "4.1.0",
-    "koa-pino-logger": "2.1.3",
-    "koa-router": "7.4.0",
-    "koa2-cors": "2.0.6",
-    "koa2-joi": "1.0.0"
+    "graphql": "14.1.0",
+    "hapi": "17.8.1"
   },
   "scripts": {
     "dev": "npm run test:unit && cross-env NODE_ENV=development nodemon",
