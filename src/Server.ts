@@ -1,33 +1,26 @@
 import * as Hapi from 'hapi';
-import { ApolloServer, gql } from 'apollo-server-hapi';
 
-const config = {
-    host: process.env.host || 'localhost',
-    port: process.env.port || 3000
-};
+import ServerPlugins from './ServerPlugins';
+import AppPlugins from './AppPlugins';
 
-const init = async (): Promise<any> => {
-    const server = new ApolloServer({});
-    const app = new Hapi.Server({
-        ...config,
-        debug: { request: ['error'] },
+const server = new Hapi.Server({
+    port: process.env.port || 3000,
+    host: process.env.host || 'localhost'
+});
+
+const init = async ():Promise<any> => {
+    await server.register(ServerPlugins);
+    await server.register(AppPlugins, {
         routes: {
-            cors: true
+            prefix: '/node'
         }
     });
-    await server.applyMiddleware({
-        app
-    });
-    await server.installSubscriptionHandlers(app.listener);
-    await app.start();
+    await server.start();
 };
 
-process.on('unhandledRejection', (err) => {
+process.on('unhandledRejection', (err: any) => {
     console.log(err);
     process.exit(1);
 });
-try {
-    init();
-} catch (error) {
-    console.log(error);
-}
+
+init();

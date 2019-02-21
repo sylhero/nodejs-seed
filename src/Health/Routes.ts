@@ -1,15 +1,20 @@
-import * as Router from 'koa-router';
+import Handlers from './Handlers';
+import Schemas from './Schemas';
 
-import Controllers from './Controllers';
-
-import CommonConstant from '../common/CommonConstant';
-
-const router = new Router({
-    prefix: CommonConstant.BASE_URL
-});
-
-router.get('/health', Controllers.health);
-
-const Routes = router.routes();
+const Routes = async (server: any): Promise<any> => {
+    server.route({
+        method: 'GET',
+        path: '/health',
+        handler: Handlers.healthHandler
+    });
+    server.route({
+        method: 'POST',
+        path: '/health/{name}',
+        handler: Handlers.healthPostHandler,
+        options: {
+            validate: Schemas.healthPost
+        }
+    });
+};
 
 export default Routes;

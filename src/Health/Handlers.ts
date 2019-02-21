@@ -1,15 +1,22 @@
-const health = async (ctx: any): Promise<string> => {
-    const response = 'Server is ok!';
-    ctx.status = 200;
-    ctx.body = {
-        success: true,
-        data: response
+const healthHandler = async ():Promise<string> => {
+    return 'hello, world';
+};
+interface HealthPost {
+    name: string;
+    age: number;
+}
+const healthPostHandler = async (request: any): Promise<HealthPost> => {
+    request.logger.info('In handler %s', request.path);
+    request.logger.info('request', request);
+    return {
+        name: 'fdfdf',
+        age: 12
     };
-    return Promise.resolve(response);
 };
 
-const Controllers = {
-    health
+const Handlers = {
+    healthHandler,
+    healthPostHandler
 };
 
-export default Controllers;
+export default Handlers;

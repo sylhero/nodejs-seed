@@ -16,7 +16,6 @@
         "no-consecutive-blank-lines": true,
         "ordered-imports": false,
         "no-console": false,
-        "no-unused-variable": true,
         "align": [true, "statements"],
         "typedef": [
             true,
