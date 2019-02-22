@@ -1,6 +1,6 @@
 # Nodejs Seed
 
-This is a full setup for Nodejs + Koa + Typescript + jest + Nodemon development
+This is a full setup for Nodejs + Hapi + Typescript + jest + Nodemon development
 
 ## Project Structure
 
@@ -9,15 +9,14 @@ This is a full setup for Nodejs + Koa + Typescript + jest + Nodemon development
     |   |   +--User //feature
     |   |   |   +-- __tests__ // unit tests
     |   |   |   +-- Routes.ts
-    |   |   |   +-- Controllers.ts
-    |   |   |   +-- images
-    |   |   +-- Routes.ts //routing file
-    |   |   +-- Server.ts // entry for pages
+    |   |   |   +-- Handlers.ts
+    |   |   +-- AppPlugins.ts //App modules
+    |   |   +-- ServerPlugins.ts //Server modules
+    |   |   +-- Server.ts // entry for the backend
 +-- node_modules
 +-- package.json
 +-- Dockerfile
 +-- README.md
-+-- dist // generated code
 +-- nodemon.json  // nodemon configuration
 +-- tsconfig.json  // tsconfig configuration
 +-- tslint.json  // tslint configuration
@@ -25,7 +24,7 @@ This is a full setup for Nodejs + Koa + Typescript + jest + Nodemon development
 
 ## Quick Start
 
-- Under `kubernetes-backend`, do `npm install`
+- Under `nodejs-seed`, do `npm install`
 - Enter `npm run dev` and the server should be ready on `localhost:3000`
 
 ## Dev Guidelines
@@ -36,7 +35,6 @@ This is a full setup for Nodejs + Koa + Typescript + jest + Nodemon development
 - `npm run dev` run dev build
 - `npm run prod` run prod build
 - `npm run test:unit` run unit tests
-- `npm run test:integration` run integration tests
 
 ## Style Guide
 https://github.com/airbnb/javascript
