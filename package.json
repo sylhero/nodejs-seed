@@ -1,18 +1,18 @@
 {
   "name": "nodejs-seed",
   "version": "1.0.0",
-  "description": "Nodejs + Hapi + Jest + Typescript + Graphql",
+  "description": "Nodejs + Hapi + Jest + Typescript + Swagger",
   "main": "src/Server.ts",
   "repository": {
     "type": "git",
     "url": "git@github.com:sylhero/nodejs-seed.git"
   },
   "keywords": [
-    "nodejs",
+    "Nodejs",
     "Hapi",
     "Jest",
     "Typescript",
-    "Graphql"
+    "Swagger"
   ],
   "author": "Yulong Song <felixsong88@gmail.com>",
   "license": "ISC",
