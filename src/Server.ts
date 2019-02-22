@@ -5,7 +5,10 @@ import AppPlugins from './AppPlugins';
 
 const server = new Hapi.Server({
     port: process.env.port || 3000,
-    host: process.env.host || 'localhost'
+    host: process.env.host || 'localhost',
+    routes: {
+        cors: true
+    }
 });
 
 const init = async ():Promise<any> => {
