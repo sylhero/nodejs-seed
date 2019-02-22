@@ -5,6 +5,7 @@ interface HealthPost {
     name: string;
     age: number;
 }
+
 const healthPostHandler = async (request: any): Promise<HealthPost> => {
     return {
         name: request.params.name,

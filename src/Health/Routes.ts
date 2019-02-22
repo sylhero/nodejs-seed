@@ -12,6 +12,9 @@ const Routes = async (server: any): Promise<any> => {
         path: '/health/{name}',
         handler: Handlers.healthPostHandler,
         options: {
+            description: 'get the heath by name',
+            notes: 'you can add notes here',
+            tags: ['api', 'health'],
             validate: Schemas.healthPost
         }
     });
