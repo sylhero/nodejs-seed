@@ -1,16 +1,10 @@
 {
     "compilerOptions": {
         "module": "commonjs",
-        "target": "es2017",
         "noImplicitAny": true,
-        "strictNullChecks": true,
-        "outDir": "./dist",
-        "sourceMap": true,
-        "resolveJsonModule": true,
-        "esModuleInterop": true,
-        "typeRoots": [ "./types", "./node_modules/@types"]
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "sourceMap": true
     },
-    "include": [
-        "src/**/*"
-    ]
+    "include": ["src/**/*"]
 }

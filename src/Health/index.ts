@@ -1,3 +1,3 @@
-import Health from './Health';
+import Routes from './routes';
 
-export default Health;
+export default Routes;

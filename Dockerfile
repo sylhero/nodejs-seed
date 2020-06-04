@@ -1,5 +1,5 @@
 # Node image
-FROM node:latest
+FROM node:12
 
 # set working directory
 RUN mkdir /usr/src/app
@@ -9,10 +9,7 @@ WORKDIR /usr/src/app
 COPY . /usr/src/app/
 
 # install and cache app dependencies
-RUN npm install
-
-# run lint and unit test
-RUN npm run test:unit
+RUN npm install --only=production
 
 EXPOSE 3000
 

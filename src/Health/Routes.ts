@@ -1,23 +1,21 @@
 import Handlers from './Handlers';
-import Schemas from './Schemas';
 
-const Routes = async (server: any): Promise<any> => {
-    server.route({
+const Routes = [
+    {
         method: 'GET',
-        path: '/health',
+        url: '/health',
+        schema: {
+            response: {
+                200: {
+                    type: 'object',
+                    properties: {
+                        message: { type: 'string' }
+                    }
+                }
+            }
+        },
         handler: Handlers.healthHandler
-    });
-    server.route({
-        method: 'POST',
-        path: '/health/{name}',
-        handler: Handlers.healthPostHandler,
-        options: {
-            description: 'get the heath by name',
-            notes: 'you can add notes here',
-            tags: ['api', 'health'],
-            validate: Schemas.healthPost
-        }
-    });
-};
+    }
+];
 
 export default Routes;
